@@ -14,7 +14,7 @@
     },
     "permissions": [
         "webRequest",
-        "*://mealie.seans.pro/*",
+        "*://*/*",
         "contextMenus",
         "storage",
         "activeTab"
