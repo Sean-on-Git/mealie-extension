@@ -1,20 +1,24 @@
 async function Clicked() {
+    // Grabs our Token and URL from the Preferences page
     const { token, url } = await browser.storage.local.get(['token', 'url']);
-    console.log(`Token: ${token}, URL: ${url}`);
-    /*
-    let site_url = document.URL.endsWith('/') ?
-        document.URL.slice(0, -1) :
-        document.URL;
-    */
-    // let mealie = "http://localhost:8080";
 
     // Pull current site's URL
     let [tab] = await browser.tabs.query({active: true, currentWindow: true});
+    // removes a traling forward slash
     let site_url = tab.url.endsWith('/') ?
         tab.url.slice(0, -1) :
         tab.url;
 
-    let mealie = url;
+    let mealie_url = url;
+
+    /***
+     * NO LONGER USED
+     * Was originally designed based off of the bookmarklet example on Mealie's GitHub
+     * 
+     * 
+    let site_url = document.URL.endsWith('/') ?
+        document.URL.slice(0, -1) :
+        document.URL;
     // let group_slug = "" // Change this to your group slug. You can obtain this from your URL after logging-in to Mealie
     // let use_keywords= "&use_keywords=0" // Optional - use keywords from recipe - update to "" if you don't want that
     // let edity = "&edit=0" // Optional - keep in edit mode - update to "" if you don't want that
@@ -34,19 +38,19 @@ async function Clicked() {
         });
     });
 
-    /*
     // Open a new tab with the destination URL
     browser.tabs.create({ url: dest }).then(() => {
         console.log(`New tab opened with URL: ${dest}`);
     }).catch((error) => {
         console.error("Error opening new tab:", error);
     });
+    *
     */
 
-    // Submit POST request
-    const postUrl = `${mealie}/api/recipes/create/url`;
+    // Submit POST request to your Mealie server
+    const postUrl = `${mealie_url}/api/recipes/create/url`;
     const requestBody = {
-        includeTags: true,
+        includeTags: false,
         url: site_url
     };
 
@@ -79,9 +83,7 @@ browser.contextMenus.create({
 
 // Add a listener for the context menu item
 browser.contextMenus.onClicked.addListener((info, tab) => {
-    console.log("click 1");
     if (info.menuItemId === "clickHere") {
-        console.log("click 2");
         Clicked();
     }
 });
