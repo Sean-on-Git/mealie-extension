@@ -1,0 +1,40 @@
+{
+    "manifest_version": 2,
+    "name": "Mealie",
+    "version": "1.0",
+
+    "description": "Connects with a local Mealie instance.",
+
+    "icons": {
+        "48": "icons/48.png"
+    },
+
+    "background": {
+            "scripts": ["background.js"]
+    },
+    "permissions": [
+        "webRequest",
+        "*://mealie.seans.pro/*",
+        "contextMenus",
+        "storage",
+        "activeTab"
+    ],
+    "commands": {
+        "activateClick": {
+            "suggested_key": {
+                "default": "Ctrl+Alt+M"
+            },
+            "description": "Activates 'Clicked' function"
+        }
+    },
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": true
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ]
+}
