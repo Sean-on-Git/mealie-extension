@@ -1,0 +1,70 @@
+body {
+  font-family: monospace;
+  background-color: #131516;
+  -webkit-text-fill-color: #ffffff;
+}
+
+div.box {
+  background: #181a1b;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px #0000001c;
+  padding: 24px 32px;
+  margin-bottom: 24px;
+  color: #cca37d;
+}
+
+.input-row {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+button,
+button#save{
+  background: #b16114;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+input,
+input#url {
+  background: #23272a;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 2px solid #b16114;
+  outline: none;
+  min-width: 180px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+input#url:focus {
+  border-color: #ff9800;
+  box-shadow: 0 0 0 2px #ff980080;
+}
+
+h1.head1 {
+  color: #ff9800;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+
+label {
+  color: #111111;
+  font-weight: 600;
+  margin-right: 8px;
+  font-size: 1rem;
+}

@@ -1,17 +1,25 @@
 <!-- options.html -->
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Mealie Extension Options</title>
-</head>
-<body>
-    <h1>Extension Options</h1>
-    <label for="token">Token:</label>
-    <input type="text" id="token" name="token"><br>
-    <label for="url">URL:</label>
-    <input type="text" id="url" name="url"><br>
-    <button id="save">Save</button>
-
+  <head>
+    <link rel="stylesheet" type="text/css" href="options-sheet.css" />
+    <title>Options for Mealie recipe scrubber</title>
+  </head>
+  <body>
+    <div class="header">
+      <h1 class="head1">Options</h1>
+    </div>
+    <div class="box">
+      <div class="input-row">
+        <label for="token">Mealie API Token:</label>
+        <input type="text" id="token" name="token" /> <br />
+      </div>
+      <div class="input-row">
+        <label for="url">Mealie Host URL: </label> <br />
+        <input type="text" id="url" name="url" />
+      </div>
+      <button id="save">Save</button>
+    </div>
     <script src="options.js"></script>
-</body>
+  </body>
 </html>
