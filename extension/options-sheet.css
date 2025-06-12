@@ -24,13 +24,37 @@ button,
 button#save{
   background: #b16114;
   color: #fff;
+  text-align: center;
   font-size: 1rem;
   font-weight: 500;
-  padding: 10px 16px;
+  padding: 10px 6px;
   border-radius: 8px;
   border: none;
   cursor: pointer;
-  transition: background-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px #0000001c;
+  transition: background-color 0.2s, box-shadow 0.2s, color 0.2s;
+  position: relative;
+}
+button#save:hover {
+  background: #7be495;
+  color: #23272a !important;
+}
+button#save.saved {
+  background: #7be495;
+  color: #23272a;
+  transition: background-color 0.4s, color 0.4s;
+}
+button#save .checkmark {
+  color: #23272a;
+  display: inline-block;
+  margin-left: 8px;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.3s, transform 0.3s;
+}
+button#save:not(.saved) .checkmark {
+  opacity: 0;
+  transform: scale(0.5);
 }
 input,
 input#url {
